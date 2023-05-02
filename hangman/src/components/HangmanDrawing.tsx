@@ -85,9 +85,16 @@ const LLeg = (
   />
 );
 
-export function HangmanDrawing() {
+const BodyParts = [Head, Body, RArm, LArm, RLeg, LLeg];
+
+type HangmanDrawingProps = {
+  numberOfGuesses: number;
+};
+
+export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
   return (
     <div style={{ position: "relative" }}>
+      {BodyParts.slice(0, numberOfGuesses)}
       <div
         style={{
           height: "50px",
